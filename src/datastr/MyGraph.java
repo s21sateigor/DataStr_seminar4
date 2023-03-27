@@ -56,11 +56,16 @@ public class MyGraph<T> {
 		}
 		
 		//verify if vertice is not already in graph
-		for(int i = 0; i < elementCounter; i++) {
+		/*for(int i = 0; i < elementCounter; i++) {
 			if(graphElements[i].getElement().equals(inputElement)) {
 				throw (new Exception("Vertice is already in graph"));
 			}
+		}*/
+		
+		if(searchVertice(inputElement) > -1) {
+			throw (new Exception("Vertice is already in graph"));
 		}
+		
 		
 		if(isFull()) {
 			increaseArray();
@@ -75,9 +80,58 @@ public class MyGraph<T> {
 		
 	
 	}
-	
-	
+		
 	//addEdge
+	public void addEdge(T elementFrom, T elementTo, float edgeWeigth) throws Exception {
+		
+		if(elementFrom==null || elementTo == null || edgeWeigth <= 0) {
+			throw (new Exception("Incorect arguments"));
+		}
+		
+		int indexOfElementFrom = searchVertice(elementFrom);
+		int indexOfElementTo = searchVertice(elementTo);
+		
+		//TODO add vertice if it is not found in graph
+		if(indexOfElementFrom < 0 || indexOfElementTo < 0) {
+			throw (new Exception("One or both vertices are not in graph"));
+		}
+		
+		MyEdgeNode newNode = new MyEdgeNode(indexOfElementTo, edgeWeigth);
+		//if it is as first edge
+		if(graphElements[indexOfElementFrom].getFirstEdge()==null) {
+			graphElements[indexOfElementFrom].setFirstEdge(newNode);
+		}
+		else
+		{
+			MyEdgeNode temp = graphElements[indexOfElementFrom].getFirstEdge();
+			
+			while(temp.getNext()!=null) {
+				temp = temp.getNext();
+			}
+			
+			temp.setNext(newNode);
+			
+		}
+		
+		
+		
+	}
+	
+	private int searchVertice(T inputElement) {
+		
+		for(int i = 0; i < elementCounter ;i++) {
+			if(graphElements[i].getElement().equals(inputElement)) {
+				//return index of element
+				return i;
+			}
+		}
+		
+		return -1;
+	}
+	
+	
+	
+	
 	//print
 	//makeEmpty
 	
