@@ -49,6 +49,43 @@ public class MyGraph<T> {
 		arraySize = newArraySize;
 	}
 	
+	//addVertice
+	public void addVertice(T inputElement) throws Exception {
+		if(inputElement == null) {
+			throw (new Exception("It is not real vertice!"));
+		}
+		
+		//verify if vertice is not already in graph
+		for(int i = 0; i < elementCounter; i++) {
+			if(graphElements[i].getElement().equals(inputElement)) {
+				throw (new Exception("Vertice is already in graph"));
+			}
+		}
+		
+		if(isFull()) {
+			increaseArray();
+		}
+		
+		MyVerticeNode newVertice = new MyVerticeNode(inputElement);
+		graphElements[elementCounter] = newVertice;
+		elementCounter++;
+		
+		//optimisation
+		//graphElements[elementCounter++] = new MyVerticeNode(inputElement);
+		
+	
+	}
+	
+	
+	//addEdge
+	//print
+	//makeEmpty
+	
+	
+	//TODO
+	//removeVertice
+	//removeEdge
+	//changeEdge
 	
 	
 	
