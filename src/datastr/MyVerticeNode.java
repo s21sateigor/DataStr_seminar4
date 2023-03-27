@@ -24,6 +24,13 @@ public class MyVerticeNode<T> {
 		this.firstEdge = firstEdge;
 	}
 	
+	public MyVerticeNode(T element) {
+		setElement(element);
+	}
+	
+	public String toString() {
+		return "" + element;
+	}
 	
 
 }
