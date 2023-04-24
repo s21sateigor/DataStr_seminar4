@@ -136,8 +136,6 @@ public class MyGraph<T> {
 		if(isEmpty()){
 			throw (new Exception("Graph is empty and not possible to print it!"));
 		}
-
-
 		//TODO 2. for loop for vertices and print each vertice;
 
 		for(int i = 0; i < elementCounter; i++){
@@ -153,8 +151,13 @@ public class MyGraph<T> {
 			}
 			System.out.println();
 		}
+	}
 
-
+	public void makeEmpty() {
+		elementCounter = 0;
+		arraySize = DEFAULT_ARRAY_SIZE;
+		graphElements = new MyVerticeNode[arraySize];
+		System.gc();
 	}
 	
 	
