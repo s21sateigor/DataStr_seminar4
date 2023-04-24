@@ -22,7 +22,8 @@ public class MainService
             map.addEdge("Riga", "Ventspils", 180);
             map.addEdge("Aizkraukle", "Ventspils", 180);
             map.addEdge("Rezekne", "Riga", 300);
-            map.addEdge("Rezekne", "Dagda", 300);
+            map.addEdge("Rezekne", "Dagda", 280);
+            map.addEdge("Rezekne", "Rezekne", 580);
 
             map.print();
         }
