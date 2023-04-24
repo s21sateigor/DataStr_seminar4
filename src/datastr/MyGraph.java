@@ -129,7 +129,13 @@ public class MyGraph<T> {
 		return -1;
 	}
 	
-	
+
+
+	public void print(){
+		//TODO 1. verification if it is isEmpty;
+		//TODO 2. for loop for vertices and print each vertice;
+		//TODO 2.1. while loop for edges and print each edge of tje specific vertice
+	}
 	
 	
 	//print
