@@ -159,16 +159,14 @@ public class MyGraph<T> {
 		graphElements = new MyVerticeNode[arraySize];
 		System.gc();
 	}
-	
-	
-	//print
-	//makeEmpty
-	
-	
+
 	//TODO
 	//removeVertice
+	//updateVertice
 	//removeEdge
-	//changeEdge
+	//updateEdgeWeight
+	//updateEdgeByItsVertices
+
 	
 	
 	
